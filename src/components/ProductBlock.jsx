@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import { useEffect, useState } from 'react';
 import { Navigation } from "swiper/modules";
 
 
@@ -103,32 +103,37 @@ const ProductBlock = ({ title= [] }) => {
         },
       ];
       
-      
+
+      const [slidesPerView, setSlidesPerView] = useState(4);
+
+  useEffect(() => {
+    // Update the slidesPerView based on window width on the client-side
+    function handleResize() {
+      setSlidesPerView(window.innerWidth < 600 ? 2 : 4);
+    }
+
+    // Attach the event listener when the component mounts
+    window.addEventListener('resize', handleResize);
+
+    // Call the handleResize function initially to set the initial slidesPerView
+    handleResize();
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className="w-[100%] mb-8 ">
+    <div className="w-full mb-8">
       <h2>{title}</h2>
-      <Swiper
-        slidesPerView={
-          window.innerWidth < 600 ? 2 :  4
-        }
-        spaceBetween={10}
-        navigation={true}
-        modules={[Navigation]}
-      >
-        {productlist?.map(
-          ({ title, src, alt, price, }, index) => (
-            <SwiperSlide key={index}>
-              <Product
-                title={title}
-                src={src}
-                alt={alt}
-                price={price}
-                // discount={discount}
-               
-              />
-            </SwiperSlide>
-          )
-        )}
+      {/* Render the Swiper directly without checking typeof window */}
+      <Swiper slidesPerView={slidesPerView} spaceBetween={10} navigation modules={[Navigation]}>
+        {productlist?.map(({ title, src, alt, price }, index) => (
+          <SwiperSlide key={index}>
+            <Product title={title} src={src} alt={alt} price={price} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
@@ -136,18 +141,12 @@ const ProductBlock = ({ title= [] }) => {
 
 export default ProductBlock;
 
-/**
- *
- */
-
-const Product = ({ src, alt, price, discount,  }) => {
+const Product = ({ src, alt, price, discount }) => {
   return (
-    <div className="  top-0 left-0 pb-3 bg-black p-[3px 7px] font-medium text-white rounded-md hover:scale-105 ease-in duration-300">
-      <img className="w-[100%] object-contain" src={src} alt={alt} />
+    <div className="top-0 left-0 pb-3 bg-black p-[3px 7px] font-medium text-white rounded-md hover:scale-105 ease-in duration-300">
+      <img className="w-full object-contain" src={src} alt={alt} />
       <div className="p-1">
-        
         <h4>LKR {price}</h4>
-        
       </div>
       {discount && <div>{discount} % Off</div>}
     </div>

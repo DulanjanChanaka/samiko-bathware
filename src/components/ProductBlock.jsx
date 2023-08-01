@@ -109,19 +109,10 @@ const ProductBlock = ({ title= [] }) => {
   useEffect(() => {
     // Update the slidesPerView based on window width on the client-side
     function handleResize() {
-      setSlidesPerView(window.innerWidth < 600 ? 2 : 4);
+      setSlidesPerView(innerWidth < 600 ? 2 : 4);
     }
 
-    // Attach the event listener when the component mounts
-    window.addEventListener('resize', handleResize);
 
-    // Call the handleResize function initially to set the initial slidesPerView
-    handleResize();
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   return (

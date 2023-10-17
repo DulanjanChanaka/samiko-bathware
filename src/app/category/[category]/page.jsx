@@ -57,7 +57,7 @@ const Category = ({ params }) => {
              
                 <div className="flex flex-row mt-20 gap-10 px-10">
                     {categoryPost.map((post) => (
-                        <div className="card w-96 bg-base-100 shadow-xl rounded-xl ">
+                        <div key={post.id} className="card w-96 bg-base-100 shadow-xl rounded-xl ">
                             <div className="top-0  md:h-4/5 sm:h-2/3 w-full overflow-hidden ">
                             <figure ><img src={post.imagelink} alt="product"  className="object-contain w-full "/></figure>
 

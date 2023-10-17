@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './styles.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import Image from 'next/image';
 
 export default function App() {
   return (
@@ -22,12 +23,25 @@ export default function App() {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
+        id='/'
       >
         <SwiperSlide>
-<img className="swiper-image  w-full  object-cover"  src='https://bathroomvillage.com/cdn/shop/files/Bristol_Store_1.jpg?v=1666279152&width=1600' />
+{/* <img className="swiper-image  w-full  object-cover"  src='https://bathroomvillage.com/cdn/shop/files/Bristol_Store_1.jpg?v=1666279152&width=1600' /> */}
+<Image src='/Assets/swiper/image4.jpeg'
+alt="Image description" 
+ width={562}
+  height={375}
+  className="swiper-image  w-full  object-cover"
+  />
 </SwiperSlide>
 <SwiperSlide >
-<img className="swiper-image  w-full  object-cover"  src='https://img.freepik.com/free-photo/beautiful-modern-bathroom-interior_181624-58029.jpg?w=1380&t=st=1689951233~exp=1689951833~hmac=8a4f002ca664a721cb45cdf53cc88c48ad7d6f04e62f14ea8bba29be3a5375cb' />
+
+<Image src='/Assets/swiper/image3.jpeg'
+alt="Image description" 
+ width={562}
+  height={375}
+  className="swiper-image  w-full  object-cover"
+  />
 </SwiperSlide>
 
       </Swiper>

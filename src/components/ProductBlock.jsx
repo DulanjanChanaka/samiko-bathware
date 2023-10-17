@@ -1,155 +1,198 @@
 "use client"
-import { Swiper, SwiperSlide } from "swiper/react";
+
 
 // Import Swiper styles
-import "swiper/css";
+
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useEffect, useState } from 'react';
 import { Navigation } from "swiper/modules";
+import { collection, getDocs } from "firebase/firestore";
+import { useRef } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import { db } from "../../firebase/firebase";
+import Image from "next/image";
 
 
+const ProductBlock = () => {
+  // const productlist = [
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Commode-Leo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 20,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Commode-Spenta-in-Sri-Lanka.jpeg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 30.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //     {
+  //       title: "product title 1",
+  //       src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
+  //       alt: "product title 1",
+  //       price: 23.44,
+  //       discount: 10.2,
+  //       rating: 3.7,
+  //     },
+  //   ];
 
-
-const ProductBlock = ({ title= [] }) => {
-    const productlist = [
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Commode-Leo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 20,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Commode-Spenta-in-Sri-Lanka.jpeg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 30.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-        {
-          title: "product title 1",
-          src: "https://www.mascons.com/wp-content/uploads/2021/11/Wash-Basin-Pedestal-Polo-in-Sri-Lanka.jpg",
-          alt: "product title 1",
-          price: 23.44,
-          discount: 10.2,
-          rating: 3.7,
-        },
-      ];
-      
-
-      const [slidesPerView, setSlidesPerView] = useState(4);
+  const [productPost, setProductPost] = useState([]);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [slidesPerView, setSlidesPerView] = useState(3);
 
   useEffect(() => {
-    // Update the slidesPerView based on window width on the client-side
-    function handleResize() {
-      setSlidesPerView(window.innerWidth < 600 ? 2 : 4);
+    // Check for window object on the client side
+    if (typeof window !== 'undefined') {
+      setIsMobileView(window.innerWidth <= 768);
     }
-
-    window.addEventListener('resize', handleResize);
-
-    // Call the handleResize function initially to set the initial slidesPerView
-    handleResize();
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('resize', handleResize);}
-
-
   }, []);
 
+  useEffect(() => {
+    setSlidesPerView(isMobileView ? 1 : 3);
+  }, [isMobileView]);
+
+
+
+
+  useEffect(() => {
+    const fetchProductPost = async () => {
+      try {
+        // Replace `db` with your Firestore database instance
+        const productPostCollection = await getDocs(collection(db, 'topitem')); // Replace with the actual collection name
+        const productPostData = productPostCollection.docs.map((doc) => {
+          const postId = doc.id
+          console.log(postId); // Log the document ID
+          return {
+            id: doc.id,
+            ...doc.data(),
+
+          };
+        });
+        setProductPost(productPostData);
+      } catch (error) {
+        console.error('Error fetching person posts:', error);
+      }
+    };
+    fetchProductPost();
+  }, []);
+
+
+
+
+
+
   return (
-    <div className="w-full mb-8">
-      <h2>{title}</h2>
-      {/* Render the Swiper directly without checking typeof window */}
-      <Swiper slidesPerView={slidesPerView} spaceBetween={10} navigation modules={[Navigation]}>
-        {productlist?.map(({ title, src, alt, price }, index) => (
-          <SwiperSlide key={index}>
-            <Product title={title} src={src} alt={alt} price={price} />
+    <div className="">
+      <Swiper
+        slidesPerView={slidesPerView}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className=""
+
+      >
+        {productPost.map((data, index) => (
+          <SwiperSlide key={index} className="rounded-lg pt-5 pb-10 px-5 flex flex-col ">
+            <div className="flex flex-col justify-center align-middle">
+              <figure>
+                <Image src={data.imagelink} alt={data.alt} height={200} width={300} />
+                {/* <img src={data.imagelink}alt={data.alt}/> */}
+              </figure>
+
+              <h2 className="card-title">{data.title}</h2>
+              <p>{data.description}</p>
+              <p>{data.price}</p>
+
+              <p className=" text-neutral-50 py-2 rounded-xl text-center  px-2    bg-teal-400 " >{data.available}</p>
+
+
+
+
+            </div>
           </SwiperSlide>
-        ))}
+        ))
+        }
       </Swiper>
     </div>
-  );
-};
 
+
+  );
+
+
+};
 export default ProductBlock;
-
-const Product = ({ src, alt, price, discount }) => {
-  return (
-    <div className="top-0 left-0 pb-3 bg-black p-[3px 7px] font-medium text-white rounded-md hover:scale-105 ease-in duration-300">
-      <img className="w-full object-contain" src={src} alt={alt} />
-      <div className="p-1">
-        <h4>LKR {price}</h4>
-      </div>
-      {discount && <div>{discount} % Off</div>}
-    </div>
-  );
-};
 

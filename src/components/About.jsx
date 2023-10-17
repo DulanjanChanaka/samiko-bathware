@@ -16,7 +16,7 @@ const About = () => {
 </p>
             </div>
             <div className='w-full  h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
-                <img className='rounded-xl' src='https://oxosa.co.za/wp-content/uploads/2019/06/Small-Bathroom-Design.jpg' alt="Description of the image" ></img>
+                <img className='rounded-xl' src='https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg' alt="Description of the image" ></img>
             </div>
         </div>
     </div>

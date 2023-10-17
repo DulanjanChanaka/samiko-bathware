@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Main from '@/components/Main'
 import Navbar from '@/components/Navbar'
 import Product from '@/components/Product'
+import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Product />
       <Category/>
       <About/>
+      <Contact/>
       <Footer/>
     </>
   )

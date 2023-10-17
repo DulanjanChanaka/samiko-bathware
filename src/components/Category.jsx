@@ -1,10 +1,11 @@
 import React from 'react'
 import Headline from './Headline'
+import Link from 'next/link'
 
 const Category = () => {
 
     return (
-        <div id='skills' className='w-full lg:h-screen p-2'>
+        <div id='category' className='w-full lg:h-screen p-2'>
             <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
             <Headline title="Category"/>
                 <p className='text-xl tracking-widest uppercase text-[#5651e5]'></p>
@@ -12,18 +13,10 @@ const Category = () => {
                 <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
     
     
-                {/* <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
-                <div className='grid grid-cols-2 gap-4 justify-center items-center'>
-                    <div className='m-auto'>
-                        <Image src='/assets/skills/html.png' width='64' height='64' alt='/'/>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
-                        <h3>Bathroom Fixtures</h3>
-                    </div>
-                </div>
-                </div>   */}
+     
     
-                <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+               <Link href="/category/bathroomfaucets">
+                <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300' >
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
                         <img src='https://m.media-amazon.com/images/I/61zs0PLlKrL.jpg' width='94' height='94' alt='/' className='rounded-lg'/>
@@ -33,7 +26,8 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
-    
+                </Link>  
+                <Link href="/category/cabinets">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -44,7 +38,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
+                <Link href="/category/mirrors">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -55,7 +51,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
+                <Link href="/category/lighting">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -66,7 +64,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
+                <Link href="/category/tile">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -77,7 +77,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
+                <Link href="/category/towelbar">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -88,7 +90,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
+                <Link href="/category/accessories">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -99,7 +103,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
+                <Link href="/category/curtains">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -110,7 +116,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
+                <Link href="/category/hardware">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -121,7 +129,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
 
+                <Link href="/category/plumbing">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -132,7 +142,9 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
 
+                <Link href="/category/cleaning">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -142,8 +154,10 @@ const Category = () => {
                         <h3>Bathroom Cleaning and Maintenance Products</h3>
                     </div>
                 </div>
-                </div> 
+                </div>
+                </Link> 
 
+                <Link href="/category/ventilation">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -153,7 +167,10 @@ const Category = () => {
                         <h3>Bathroom Ventilation</h3>
                     </div>
                 </div>
-                </div> 
+                </div>
+                </Link> 
+
+                <Link href="/category/heaters">
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                     <div className='m-auto'>
@@ -164,6 +181,7 @@ const Category = () => {
                     </div>
                 </div>
                 </div> 
+                </Link>
     
                 </div>
             </div>
@@ -173,3 +191,16 @@ const Category = () => {
 }
 
 export default Category
+
+
+
+           {/* <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                    <div className='m-auto'>
+                        <Image src='/assets/skills/html.png' width='64' height='64' alt='/'/>
+                    </div>
+                    <div className='flex flex-col items-center justify-center'>
+                        <h3>Bathroom Fixtures</h3>
+                    </div>
+                </div>
+                </div>   */}

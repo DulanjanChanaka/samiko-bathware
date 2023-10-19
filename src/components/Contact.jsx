@@ -117,10 +117,10 @@ export default function Contact() {
 
                 <div className='mt-14 text-center '>
                     <a href="https://www.facebook.com/profile.php?id=100088974648556" target="_blank" rel="noopener noreferrer">
-                        <FacebookIcon className='text-6xl mr-8' />
+                        <FacebookIcon className='text-[58px] mr-8' />
                     </a>
                     <a href="https://goo.gl/maps/LvCV18kDLtJsFcYH7" target="_blank" rel="noopener noreferrer">
-                        <PlaceIcon className='text-6xl' />
+                        <PlaceIcon className='text-[58px]' />
                     </a>
                 </div>
 

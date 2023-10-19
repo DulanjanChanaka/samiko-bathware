@@ -3,8 +3,7 @@ import { useState } from 'react';
 import Headline from './Headline';
 import { db } from '../../firebase/firebase';
 import { addDoc, collection } from 'firebase/firestore';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import PlaceIcon from '@mui/icons-material/Place';
+
 
 export default function Contact() {
 
@@ -108,21 +107,7 @@ export default function Contact() {
 
                 </div>
 
-                <div className='mt-14 text-base text-center '>
-                    <p>40/162, Piliyandala Road, Gemunupura, Kottawa.</p>
-                    <p className='mt-3 font-semibold'>+94-77 734 8289</p>
-                </div>
                 
-                    
-
-                <div className='mt-14 text-center '>
-                    <a href="https://www.facebook.com/profile.php?id=100088974648556" target="_blank" rel="noopener noreferrer">
-                        <FacebookIcon className='text-[58px] mr-8' />
-                    </a>
-                    <a href="https://goo.gl/maps/LvCV18kDLtJsFcYH7" target="_blank" rel="noopener noreferrer">
-                        <PlaceIcon className='text-[58px]' />
-                    </a>
-                </div>
 
             </div>
 

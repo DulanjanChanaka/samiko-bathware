@@ -55,23 +55,26 @@ const Category = ({ params }) => {
                 </Link>
                 </div>
              
-                <div className="flex flex-row mt-20 gap-10 px-10">
+                <div  className='flex flex-row p-3 gap-10'>
                     {categoryPost.map((post) => (
-                        <div key={post.id} className="card w-96 bg-base-100 shadow-xl rounded-xl ">
-                            <div className="top-0  md:h-4/5 sm:h-2/3 w-full overflow-hidden ">
-                            <figure ><img src={post.imagelink} alt="product"  className="object-contain w-full "/></figure>
+               
+                        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-screen-xl mx-auto  w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl items-center justify-center p-4 hover:scale-105 ease-in duration-300 ">
+                            <div className="flex flex-col ">
+              <figure>
+                <Image src={post.imagelink} alt={data.alt} height={200} width={200}  className="rounded-lg pb-2"/>
+                {/* <img src={data.imagelink}alt={data.alt}/> */}
+              </figure>
 
-                            </div>
-                            
-                            <div className="card-body md:h-1/5 sm:h-1/3 overflow-hidden  flex flex-col justify-center text-center">
-                                <p className="card-title text-lg font-bold">{post.title}</p>
-                                <p>{post.description}</p>
-                                <div className="card-actions justify-end pb-5">
-                                    {/* <button className="btn btn-primary ">{post.available}</button> */}
-                                    <p className="px-2 text-sky-500">{post.available}</p>
-                                </div>
-                            </div>
-                        </div>
+              <h2 className="card-title">{data.title}</h2>
+              <p>{data.description}</p>
+              <p>{data.price}</p>
+
+              <p className=" text-neutral-50 py-2 rounded-xl text-center  px-2    bg-teal-400 " >{post.available}</p>
+              </div>
+
+
+
+            </div>
                     ))}
                 </div>
 

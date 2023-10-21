@@ -6,7 +6,7 @@ const Product = () => {
   return (
     <section id="product" className='max-w-[1640px] mx-auto p-4 py-12'>
         <Headline title="Products"/>
-        <div>
+        <div >
             <ProductBlock/>
         </div>
     </section >

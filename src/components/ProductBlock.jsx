@@ -169,7 +169,7 @@ const ProductBlock = () => {
           <SwiperSlide key={index} className="rounded-lg pt-5 pb-10 px-5 flex flex-col ">
             <div className="flex flex-col justify-center align-middle">
               <figure>
-                <Image src={data.imagelink} alt={data.alt} height={200} width={300} />
+                <Image src={data.imagelink} alt={data.alt} height={200} width={200}  className="p-10"/>
                 {/* <img src={data.imagelink}alt={data.alt}/> */}
               </figure>
 

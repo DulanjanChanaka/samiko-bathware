@@ -4,8 +4,21 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Samico Bathware',
+  title: 'Samiko Bathware',
   description: 'High quality bathware items',
+  icons: {
+    icon: [
+      '/favicon.ico?v=4',
+    ],
+    apple: [
+      '/apple-touch-icon.png?v=4',
+    ],
+    shortcut: [
+      '/apple-touch-icon.png?v=4', 
+    ]
+   
+  },
+  manifest:'/site.webmanifest'
 }
 
 export default function RootLayout({ children }) {

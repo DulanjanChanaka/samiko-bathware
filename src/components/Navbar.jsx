@@ -1,6 +1,7 @@
 "use client"
 
 
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useState, useEffect } from 'react'
@@ -48,7 +49,11 @@ const Navbar = () => {
   return (
     <div style={{ backgroundColor: `${navBg}` }} className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
       <div className='flex justify-between  items-center w-full h-full px-2 2xl:px-16'>
-        <h2>SAMIKO</h2>
+        <div className='flex flex-col'>
+        <Image src='/android-chrome-192x192.png' width={50} height={50} alt='fav'/>
+        <h3>SAMIKO</h3>
+        </div>
+        
 
         <div>
           <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
@@ -110,7 +115,10 @@ const Navbar = () => {
         }>
           <div>
             <div className='flex w-full items-center justify-between'>
-              <h2>SAMIKO</h2>
+            <div className='flex flex-col'>
+        <Image src='/android-chrome-192x192.png' width={50} height={50}/>
+        <h3 >SAMIKO</h3>
+        </div>
               <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
                 <AiOutlineClose />
               </div>

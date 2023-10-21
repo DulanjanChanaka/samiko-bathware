@@ -65,9 +65,9 @@ const Category = ({ params }) => {
                 {/* <img src={data.imagelink}alt={data.alt}/> */}
               </figure>
 
-              <h2 className="card-title">{data.title}</h2>
+              {/* <h2 className="card-title">{data.title}</h2>
               <p>{data.description}</p>
-              <p>{data.price}</p>
+              <p>{data.price}</p> */}
 
               <p className=" text-neutral-50 py-2 rounded-xl text-center  px-2    bg-teal-400 " >{post.available}</p>
               </div>

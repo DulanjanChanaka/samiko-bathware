@@ -61,7 +61,7 @@ const Category = ({ params }) => {
                         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-screen-xl mx-auto  w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl items-center justify-center p-4 hover:scale-105 ease-in duration-300 ">
                             <div className="flex flex-col ">
               <figure>
-                <Image src={post.imagelink} alt='categoryimage' height={200} width={200}  className="rounded-lg pb-2" />
+                <Image src={post.imagelink} alt='category' height={200} width={200}  className="rounded-lg pb-2" />
                 {/* <img src={data.imagelink}alt={data.alt}/> */}
               </figure>
 

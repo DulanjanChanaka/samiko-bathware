@@ -44,32 +44,37 @@ const Category = ({ params }) => {
     console.log("params data", data);
     return (
         <div>
-            <div className="top-0 left-0">
+            <div className="top-0 left-0 sticky">
                 <Navbar />
             </div>
 
-            <div className="pt-20">
+            <div className="lg:pt-[150px] ">
                 <div className="hidden md:block">
                 <Link href={'/#category'} className=" hover:bg-neutral-400 text-sm mb-4 block bg-sky-600 w-[80px] text-white ml-10 text-center py-2 px-2 rounded-xl">
                     Go Back
                 </Link>
                 </div>
              
-                <div className="flex flex-row mt-20 gap-10 px-10">
+                <div className="  gap-10 px-10  grid grid-cols-2 lg:grid-cols-6 ">
                     {categoryPost.map((post) => (
-                        <div key={post.id} className="card w-96 bg-base-100 shadow-xl rounded-xl ">
-                            <div className="top-0  md:h-4/5 sm:h-2/3 w-full overflow-hidden ">
-                            <figure ><img src={post.imagelink} alt="product"  className="object-contain w-full "/></figure>
+                        <div key={post.id} className="card lg:mt-[50px] mt-[110px] shadow-xl rounded-xl  bg-white flex flex-col p-2 ">
+                            <div className="top-0 align-middle justify-center p-1">
+                            
+                                
+                                <Image src={post.imagelink} width={200} height={200} alt="product" className="" />
+                               
+                            
 
                             </div>
                             
-                            <div className="card-body md:h-1/5 sm:h-1/3 overflow-hidden  flex flex-col justify-center text-center">
+                            <div className="card-body   overflow-hidden  flex flex-col justify-center text-center">
                                 <p className="card-title text-lg font-bold">{post.title}</p>
-                                <p>{post.description}</p>
-                                <div className="card-actions justify-end pb-5">
+                                <p>{post.description} Commed</p>
+                                <p>{post.price}20000</p>
+                                
                                     {/* <button className="btn btn-primary ">{post.available}</button> */}
-                                    <p className="px-2 text-sky-500">{post.available}</p>
-                                </div>
+                                    <p className="px-2 bg-sky-500 py-2  text-white rounded-xl">{post.available}</p>
+                                
                             </div>
                         </div>
                     ))}

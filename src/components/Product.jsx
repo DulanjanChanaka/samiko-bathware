@@ -4,9 +4,9 @@ import ProductBlock from './ProductBlock'
 
 const Product = () => {
   return (
-    <section id="product" className='max-w-[1640px] mx-auto p-4 py-12'>
+    <section id="product" className=' mx-auto p-4 py-12 bg-slate-300 mt-10 mb-7 lg:mb-2'>
         <Headline title="Products"/>
-        <div >
+        <div className='lg:px-40'>
             <ProductBlock/>
         </div>
     </section >

@@ -14,7 +14,7 @@ export default function App() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 4500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -27,20 +27,33 @@ export default function App() {
       >
         <SwiperSlide>
 {/* <img className="swiper-image  w-full  object-cover"  src='https://bathroomvillage.com/cdn/shop/files/Bristol_Store_1.jpg?v=1666279152&width=1600' /> */}
-<Image src='/Assets/swiper/image4.jpeg'
+<Image src='/bath1.jpg'
 alt="Image description" 
- width={562}
-  height={375}
+ width={2100}
+  height={1350}
   className="swiper-image  w-full  object-cover"
   />
 </SwiperSlide>
 <SwiperSlide >
 
-<Image src='/Assets/swiper/image3.jpeg'
+<Image src='/bath2.jpg'
 alt="Image description" 
- width={562}
-  height={375}
-  className="swiper-image  w-full  object-cover"
+ width={2500}
+  height={1312}
+  className="swiper-image bg-cover bg-center  w-full  object-cover"
+  />
+</SwiperSlide>
+
+
+
+<SwiperSlide >
+
+<Image src='/bath4.jpg'
+alt="Image description" 
+ width={2500}
+  height={1312}
+  className="swiper-image  bg-center  w-full  object-cover"
+  style={{objectFit: 'cover'}}
   />
 </SwiperSlide>
 

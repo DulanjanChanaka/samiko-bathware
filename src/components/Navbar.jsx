@@ -124,7 +124,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className='border-b border-t-gray-300 my-4'>
-              <p className='w-[85%] md:w-[90%] py-4'>High quality bathware items</p>
+              <p className='w-[85%] md:w-[90%] py-4 font-semibold '>High quality bathware items</p>
             </div>
           </div>
           <div className='py-4 flex flex-col'>

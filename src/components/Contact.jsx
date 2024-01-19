@@ -37,12 +37,12 @@ export default function Contact() {
     };
 
     return (
-        <div id='contact' className='w-full lg:h-screen '>
+        <div id='contact' className='w-full lg:mt-[80px]'>
             <Headline title={"Contact "} />
-            <div className='lg:mx-[150px] mb-10'>
+            <div className='bg-[url(/beach.jpg)] bg-cover bg-center  '>
+              <div className='lg:w-[600px] mb-10 px-5 pt-8 pb-10 gb '>
 
-
-                <div className='col-span-3 w-full h-auto shadow-lg shadow-gray-400 rounded-xl lg:p-4'>
+                <div className='col-span-3 w-full h-auto shadow-lg shadow-gray-400 rounded-xl lg:p-4 bg-sky-100 bg-opacity-60'>
                     <div className='p-4'>
                         <form
                             onSubmit={handleSubmit}
@@ -108,7 +108,7 @@ export default function Contact() {
                 </div>
 
                 
-
+</div>
             </div>
 
         </div>

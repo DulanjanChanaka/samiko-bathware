@@ -73,7 +73,7 @@ const Category = ({ params }) => {
                                 <p>{post.price}</p>
                                 
                                     {/* <button className="btn btn-primary ">{post.available}</button> */}
-                                    <p className="px-2 bg-sky-500 py-2  text-white rounded-xl">{post.available}</p>
+                                    {/* <p className="px-2 bg-sky-500 py-2  text-white rounded-xl">{post.available}</p> */}
                                 
                             </div>
                         </div>

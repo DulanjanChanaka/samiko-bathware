@@ -69,8 +69,8 @@ const Category = ({ params }) => {
                             
                             <div className="card-body   overflow-hidden  flex flex-col justify-center text-center">
                                 <p className="card-title text-lg font-bold">{post.title}</p>
-                                <p>{post.description} Commed</p>
-                                <p>{post.price}20000</p>
+                                <p>{post.description} </p>
+                                <p>{post.price}</p>
                                 
                                     {/* <button className="btn btn-primary ">{post.available}</button> */}
                                     <p className="px-2 bg-sky-500 py-2  text-white rounded-xl">{post.available}</p>

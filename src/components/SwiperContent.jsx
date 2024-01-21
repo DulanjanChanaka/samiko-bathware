@@ -20,19 +20,23 @@ export default function App() {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper relative"
         id='/'
       >
         <SwiperSlide>
-{/* <img className="swiper-image  w-full  object-cover"  src='https://bathroomvillage.com/cdn/shop/files/Bristol_Store_1.jpg?v=1666279152&width=1600' /> */}
+
 <Image src='/bath1.jpg'
 alt="Image description" 
  width={2100}
   height={1350}
   className="swiper-image  w-full  object-cover"
   />
+    <div className="absolute inset-0 flex flex-col  items-center justify-end mb-20 text-white">
+          <h2 className="text-2xl font-bold mb-4">Build Your Dream Bathroom</h2>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">Discover</button>
+        </div>
 </SwiperSlide>
 <SwiperSlide >
 
@@ -42,6 +46,10 @@ alt="Image description"
   height={1312}
   className="swiper-image bg-cover bg-center  w-full  object-cover"
   />
+    <div className="absolute inset-0 flex flex-col  items-center justify-end mb-20 text-white">
+          <h2 className="text-2xl font-bold mb-4">High Quality Bathware</h2>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">Discover</button>
+        </div>
 </SwiperSlide>
 
 
@@ -55,6 +63,10 @@ alt="Image description"
   className="swiper-image  bg-center  w-full  object-cover"
   style={{objectFit: 'cover'}}
   />
+    <div className="absolute inset-0 flex flex-col items-center justify-end mb-20 text-white">
+          <h2 className="text-2xl font-bold mb-4">Build Your Dream Bathroom</h2>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">Discover</button>
+        </div>
 </SwiperSlide>
 
       </Swiper>

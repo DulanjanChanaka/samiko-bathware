@@ -4,7 +4,7 @@ import Headline from './Headline';
 
 const About = () => {
   return  (
-    <div id='about'className='w-full  bg-slate-300 lg:py-10  py-10 mb-10'>
+    <div id='about'className='w-full lg:mt-[-50px]  bg-slate-300 lg:py-10  py-10 mb-10'>
       <Headline title="About"/>
         <div className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8 px-3 '>
             <div className='col-span-2 '>

@@ -37,7 +37,7 @@ export default function Contact() {
     };
 
     return (
-        <div id='contact' className='w-full lg:mt-[80px]'>
+        <div id='contact' className='w-full '>
             <Headline title={"Contact "} />
             <div className='bg-[url(/beach.jpg)] bg-cover bg-center  '>
               <div className='lg:w-[600px] mb-10 px-5 pt-8 pb-10 gb '>

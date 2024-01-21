@@ -167,17 +167,17 @@ const ProductBlock = () => {
       >
         {productPost.map((data, index) => (
           <SwiperSlide key={index} className="rounded-lg pt-5 pb-10 px-5 flex flex-col ">
-            <div className="flex flex-col justify-center align-middle">
+            <div className="flex flex-col justify-center align-middle ">
               <figure>
                 <Image src={data.imagelink} alt={data.alt} height={200} width={200}  className="p-10"/>
                 {/* <img src={data.imagelink}alt={data.alt}/> */}
               </figure>
 
-              <h2 className="card-title">{data.title}</h2>
+              {/* <h2 className="card-title">{data.title}</h2>
               <p>{data.description}</p>
               <p>{data.price}</p>
 
-              <p className=" text-neutral-50 py-2 rounded-xl text-center  px-2    bg-teal-400 " >{data.available}</p>
+              <p className=" text-neutral-50 py-2 rounded-xl text-center  px-2    bg-teal-400 " >{data.available}</p> */}
 
 
 

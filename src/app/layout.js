@@ -4,11 +4,14 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Samiko Bathware',
+  title: {
+    default:'Samiko Bathware',
+    template: "%s - Samiko Bathware"
+  },
   description: 'High quality bathware items',
   icons: {
     icon: [
-      '/favicon.ico?v=4',
+      '/favicon.ico',
     ],
     apple: [
       '/apple-touch-icon.png?v=4',
